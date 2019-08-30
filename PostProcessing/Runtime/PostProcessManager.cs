@@ -56,11 +56,12 @@ namespace UnityEngine.Rendering.PostProcessing
 #if UNITY_EDITOR
         // Called every time Unity recompile scripts in the editor. We need this to keep track of
         // any new custom effect the user might add to the project
-        [UnityEditor.Callbacks.DidReloadScripts]
-        static void OnEditorReload()
-        {
-            instance.ReloadBaseTypes();
-        }
+        // TODO: slows editor WAY down.
+        // [UnityEditor.Callbacks.DidReloadScripts]
+        // static void OnEditorReload()
+        // {
+        //     instance.ReloadBaseTypes();
+        // }
 #endif
 
         void CleanBaseTypes()

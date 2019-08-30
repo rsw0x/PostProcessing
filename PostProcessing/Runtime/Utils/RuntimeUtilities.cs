@@ -781,7 +781,7 @@ namespace UnityEngine.Rendering.PostProcessing
             {
 #if UNITY_EDITOR
                 return isSinglePassStereoSelected && Application.isPlaying;
-#elif !ENABLE_VR
+#elif !false
                 return false;
 #elif UNITY_2017_2_OR_NEWER
                 return UnityEngine.XR.XRSettings.eyeTextureDesc.vrUsage == VRTextureUsage.TwoEyes;
@@ -800,7 +800,7 @@ namespace UnityEngine.Rendering.PostProcessing
             {
 #if UNITY_EDITOR
                 return UnityEditor.PlayerSettings.virtualRealitySupported;
-#elif UNITY_XBOXONE || !ENABLE_VR
+#elif UNITY_XBOXONE || !false
                 return false;
 #elif UNITY_2017_2_OR_NEWER
                 return UnityEngine.XR.XRSettings.enabled;
