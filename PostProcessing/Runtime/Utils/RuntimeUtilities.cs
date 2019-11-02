@@ -1163,6 +1163,15 @@ namespace UnityEngine.Rendering.PostProcessing
 
             return m_AssemblyTypes;
         }
+        public static IEnumerable<Type> GetAllAssemblyDerivedTypes<T>()
+        {
+          #if UNITY_EDITOR
+          return TypeCache.GetTypesDerivedFrom<T>();
+          #else
+          return GetAllAssemblyTypes().Where(x => (T).IsAssignableFrom(x));
+          // return GetAllAssemblyTypes().Where(x => x.IsSubclassOf(typeof(T)));
+          #endif
+        }
 
         /// <summary>
         /// Helper method to get the first attribute of type <c>T</c> on a given type.

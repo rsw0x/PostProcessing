@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.Assertions;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace UnityEngine.Rendering.PostProcessing
 {
@@ -81,10 +84,9 @@ namespace UnityEngine.Rendering.PostProcessing
             CleanBaseTypes();
 
             // Rebuild the base type map
-            var types = RuntimeUtilities.GetAllAssemblyTypes()
+            var types = RuntimeUtilities.GetAllAssemblyDerivedTypes<PostProcessEffectSettings>()
                             .Where(
-                                t => t.IsSubclassOf(typeof(PostProcessEffectSettings))
-                                  && t.IsDefined(typeof(PostProcessAttribute), false)
+                                  t => t.IsDefined(typeof(PostProcessAttribute), false)
                                   && !t.IsAbstract
                             );
 

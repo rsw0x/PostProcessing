@@ -94,7 +94,8 @@ namespace UnityEditor.Rendering.PostProcessing
             headerBackgroundDark = new Color(0.1f, 0.1f, 0.1f, 0.2f);
             headerBackgroundLight = new Color(1f, 1f, 1f, 0.2f);
 
-            paneOptionsIconDark = (Texture2D)EditorGUIUtility.Load("Builtin Skins/DarkSkin/Images/pane options.png");
+            //paneOptionsIconDark = (Texture2D)EditorGUIUtility.Load("Builtin Skins/DarkSkin/Images/pane options.png");
+            paneOptionsIconDark = (Texture2D)EditorGUIUtility.Load("Builtin Skins/LightSkin/Images/pane options.png");
             paneOptionsIconLight = (Texture2D)EditorGUIUtility.Load("Builtin Skins/LightSkin/Images/pane options.png");
 
             headerLabel = new GUIStyle(EditorStyles.miniLabel);
